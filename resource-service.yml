@@ -1,11 +1,12 @@
+server:
+  port: 0
+
 spring:
   servlet:
     multipart:
       max-file-size: 10MB
   application:
     name: resource-service
-  main:
-    allow-circular-references: true
   jpa:
     hibernate:
       ddl-auto: create
@@ -49,8 +50,23 @@ spring:
             value:
               delegate:
                 class: org.apache.kafka.common.serialization.StringDeserializer
-server:
-  port: 0
+
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        register-health-indicator: true
+        failure-rate-threshold: 50
+        slow-call-rate-threshold: 50
+        slow-call-duration-threshold: 2s
+        permitted-number-of-calls-in-half-open-state: 2
+        sliding-window-size: 10
+        minimum-number-of-calls: 5
+        wait-duration-in-open-state: 10s
+    instances:
+      storageService:
+        base-config: default
+        sliding-window-size: 5
 
 eureka:
   instance:
