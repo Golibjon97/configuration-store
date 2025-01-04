@@ -4,6 +4,8 @@ spring:
       max-file-size: 10MB
   application:
     name: resource-service
+  main:
+    allow-circular-references: true
   jpa:
     hibernate:
       ddl-auto: create
