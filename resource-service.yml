@@ -83,3 +83,20 @@ io:
     aws:
       s3:
         bucket-name: resource-service-golibjon
+
+management:
+  endpoint:
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+
+
