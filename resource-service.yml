@@ -85,8 +85,6 @@ io:
         bucket-name: resource-service-golibjon
 
 management:
-  server:
-    port: 9001
   endpoint:
     metrics:
       enabled: true
