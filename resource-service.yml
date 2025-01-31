@@ -14,7 +14,7 @@ spring:
   datasource:
     password: ${DB_PASSWORD}
     username: ${DB_USERNAME}
-    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/resource_service}
+    url: jdbc:postgresql://${DB_HOST:localhost}:5432/resource_service
   kafka:
     bootstrap-servers: ${SPRING_KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
     topic:
