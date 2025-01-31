@@ -12,8 +12,8 @@ spring:
       ddl-auto: create
     show-sql: true
   datasource:
-    password: ${DB_PASSWORD:123}
-    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD}
+    username: ${DB_USERNAME}
     url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/resource_service}
   kafka:
     bootstrap-servers: ${SPRING_KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
