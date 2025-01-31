@@ -23,7 +23,7 @@ spring:
     username: ${DB_USERNAME:postgres}
     url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/resource_service}
   kafka:
-    bootstrap-servers: localhost:9092
+    bootstrap-servers: ${SPRING_KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
     topic:
       name: resource_id
     producer:
@@ -73,7 +73,7 @@ eureka:
     prefer-ip-address: false
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE:http://localhost:8761/eureka}
     fetch-registry: true
     register-with-eureka: true
     enabled: true
