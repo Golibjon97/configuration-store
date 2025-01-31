@@ -19,8 +19,8 @@ spring:
       region:
         static: us-east-1
   datasource:
-    password: ${DB_PASSWORD}
-    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD:123}
+    username: ${DB_USERNAME:postgres}
     url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/resource_service}
   kafka:
     bootstrap-servers: localhost:9092
