@@ -11,13 +11,6 @@ spring:
     hibernate:
       ddl-auto: create
     show-sql: true
-  cloud:
-    aws:
-      credentials:
-        access-key: ${AWS-ACCESS-KEY}
-        secret-key: ${AWS-SECRET-KEY}
-      region:
-        static: us-east-1
   datasource:
     password: ${DB_PASSWORD:123}
     username: ${DB_USERNAME:postgres}
