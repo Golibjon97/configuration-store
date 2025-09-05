@@ -43,6 +43,10 @@ spring:
             value:
               delegate:
                 class: org.apache.kafka.common.serialization.StringDeserializer
+    template:
+      observation-enabled: true
+    listener:
+      observation-enabled: true
 
 resilience4j:
   circuitbreaker:
